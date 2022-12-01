@@ -93,14 +93,6 @@ public class CartController {
 	
 	@GetMapping("/cart/{buyerId}")
 	public ResponseEntity<CartDto> getAllProductByBuyerId(@PathVariable Long buyerId) throws Exception{
-//		Optional<Buyer> buyerOptional=buyerService.findbyBuyerId(buyerId);
-//		if(buyerOptional.isPresent()) {
-//				return new ResponseEntity<List<CartResponse>>(cartService.getAllProductByBuyerId(buyerOptional.get()), HttpStatus.OK);
-//		}	
-//		else {
-//			throw new Exception("User Not Found");
-//	
-//		}
 		System.out.println("userdetails"+buyerId);
 		Buyer buyer=buyerService.getBuyerId(buyerId);
 		CartDto cartDto=cartService.listCartItem(buyer);
